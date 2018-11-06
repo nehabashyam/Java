@@ -1,0 +1,51 @@
+// Neha Bashyam Period 1
+import java.util.Scanner ; 
+
+public class craps{
+	public static void main(String [] args) {
+		Scanner keyboard = new Scanner(System.in);
+		System.out.print("Enter the number of games: ");
+		int number_of_games = keyboard.nextInt();
+		int sum = 1;
+		int x = 0;
+		double win = 0; 
+		double lose = 0;  
+
+		while ( x <=number_of_games) {
+			
+			int first_value = ((int) (Math.random()*6)) +1; // simulate 2 coin tosses 
+			int second_value = ((int) (Math.random()*6)) +1;
+			
+			sum = first_value + second_value; 
+			if ( sum == 7 || sum == 11){ // if the sum is 7/11 counts as a win 
+				win = win + 1.0 ;
+			}
+			if ( sum == 2 || sum == 3 || sum ==12){ // if sum is 2/3/12 counts as a loss 
+				lose = lose + 1.0; 
+			}
+			else {
+				while (sum != 7 && sum != 11 && sum != 2 && sum!= 3 && sum!= 12){
+					double point = sum;
+					int third_value = ((int)(Math.random() *6) +1);
+					int fourth_value = ((int)(Math.random() *6) +1);
+					int sum_2 = third_value + fourth_value; 
+					if (sum_2 == point){
+						win = win + 1.0;
+						break;
+					}
+
+					else if(sum_2 ==7){ 
+						lose = lose +1.0;
+						break;
+					}
+
+					else {
+						continue;
+					}
+				}
+			}
+			x= x+1;
+		}
+		System.out.print (win /(win +lose));
+	}
+}
