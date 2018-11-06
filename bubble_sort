@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class sort_bubble { 
+public class bubble_sort { 
 	public static void main (String[] args) {
 		Scanner keyboard= new Scanner(System.in);
 		int dimensions = keyboard.nextInt(); 
