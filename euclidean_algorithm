@@ -1,0 +1,40 @@
+import java.util.Scanner; 
+
+public class euclidean_algorithm {
+	public static void main(String [] args) {
+		Scanner keyboard = new Scanner(System.in); 
+		System.out.print("Enter the first number: "); 
+		double input_one = keyboard.nextDouble(); 
+		System.out.print("Enter the second number: "); 
+		double input_two = keyboard.nextDouble(); 
+
+		if (input_two > input_one) {
+			double a = input_one; 
+			input_one = input_two; 
+			input_two = a; 
+		}
+		if ( input_one > input_two) {
+			double remainder = 1.0 ;
+			while (remainder > 0){
+				remainder = input_one % input_two; 
+				if (remainder ==0 ) {
+					break;
+				}
+				input_one = input_two; 
+				double b = remainder;	 
+				input_two = b; 
+			
+				}
+
+			}
+		System.out.print(input_two);
+		return;
+		}
+			
+}
+
+
+
+
+
+ 
