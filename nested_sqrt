@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class nested_sqrt { 
+	public static void main (String[] args) {
+		Scanner keyboard= new Scanner(System.in);
+		int input = keyboard.nextInt();
+		System.out.println(sqsq(input, 1000));
+		
+	}
+
+	public static double sqsq(int val, int tries){
+		if (tries==1){
+			return(Math.sqrt(val));
+		}
+		else  
+			return (Math.sqrt(val + sqsq(val, tries-1)));
+	}
+}
