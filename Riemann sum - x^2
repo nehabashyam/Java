@@ -1,0 +1,24 @@
+import java.util.Scanner; 
+
+public class riemann_x_squared {
+	public static void main (String [] args) {
+		Scanner keyboard = new Scanner(System.in) ; 
+		System.out.print ("Enter the lower bound:"); 
+		double a_value = keyboard.nextDouble();
+		System.out.print ("Enter the upper bound:"); 
+		double b_value = keyboard.nextDouble();
+		System.out.print ("Enter the n value:"); 
+		double n_value = keyboard.nextDouble(); 
+		double constant = ((b_value- a_value)/n_value);
+		double sum = 0.0; 
+		while (a_value < b_value ) {
+			sum = sum + constant*(a_value*a_value); 
+			 
+			a_value = a_value + constant;
+			
+		}
+		System.out.print("The sum is: " + sum);
+		return; 
+	}
+
+}
