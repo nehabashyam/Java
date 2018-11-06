@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class digitsum { 
+	public static void main (String[] args) {
+		Scanner keyboard= new Scanner(System.in);
+		int val = keyboard.nextInt(); 
+
+		System.out.print(summation(val));
+	}
+
+	static int sum =0;
+	public static int summation (int val){
+		if (val <10){
+			return (val);
+		}
+		else {
+			sum = val%10;
+			return (sum + summation(val/10));
+		}
+	}
+}
