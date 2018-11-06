@@ -1,6 +1,6 @@
 import java.util.Scanner; 
 
-public class riemann_x_squared {
+public class riemann_sum_x_squared {
 	public static void main (String [] args) {
 		Scanner keyboard = new Scanner(System.in) ; 
 		System.out.print ("Enter the lower bound:"); 
