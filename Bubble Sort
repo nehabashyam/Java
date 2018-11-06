@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class sort_bubble { 
+	public static void main (String[] args) {
+		Scanner keyboard= new Scanner(System.in);
+		int dimensions = keyboard.nextInt(); 
+	
+		int [] array = new int [dimensions];
+		for (int i=0; i<dimensions; i++){
+			array[i] = keyboard.nextInt();
+		}
+
+		int length = array.length;
+		int temp = 0;
+		for (int counter=0; counter<length-1; counter++){
+			for (int i=1; i<length; i++){
+			if (array[i-1]>= array[i]){
+				temp = array[i];
+				array[i] = array[i-1];
+				array[i-1] = temp;
+			}
+			else
+				continue;
+			}	
+		}
+		
+		for (int i=0; i<length; i++){
+			System.out.print(array[i] + " ");
+		}
+		
+
+      	
+
+	}
+} 
