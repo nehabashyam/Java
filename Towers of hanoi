@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class hanoi { 
+	public static void main (String[] args) {
+	Scanner keyboard= new Scanner(System.in);
+	int disks = keyboard.nextInt();
+	hanoi_run(disks, 'A', 'C', 'B');
+	System.out.print(Math.pow(2,disks) -1);
+}
+	
+	public static void hanoi_run ( int disks, char start, char temp, char end){ // need to output number of tries
+		if (disks ==1 ){
+			System.out.println (start + "->" + end);
+
+			
+		}
+		else {
+			hanoi_run (disks-1, start, end, temp);
+			System.out.println(start + "->" + end);
+
+			hanoi_run ( disks-1, temp, start, end);
+
+		}
+		
+	}
+	
+} 
+	
