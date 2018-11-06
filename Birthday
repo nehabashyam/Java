@@ -1,0 +1,42 @@
+// Neha Bashyam Period 1
+import java.util.Scanner; 
+
+public class birthday_prob {
+	public static void main(String [] args) {
+		Scanner keyboard= new Scanner(System.in);
+		System.out.print("Enter number of people:"); 
+		int number = keyboard.nextInt(); 
+		System.out.print("Enter the number of trials:");
+		int trials= keyboard.nextInt();
+		int [] birthdays = new int [number];
+		double same_birthday = 0.0;
+		int value_checking=0;
+		int a= 0;
+		boolean is_break_needed=false; 
+
+		while(a< trials){
+			for(int i = 0; i< number; i++){ // generating an array of birthday values for each person (1 to 365)
+				birthdays[i]= ((int)((Math.random()*365)+1));
+			}
+			for (int b =0; b < number; b++){ //prob that at least 2 ppl have the same birthday
+				value_checking = birthdays[b]; // check the birthday[b] value each time the loop increments 
+				
+				for (int j = b+1; j<= number-1; j++){ // check all the other numbers for matches with birthdays[b]
+					if (birthdays[j] == value_checking){
+						same_birthday++;
+						is_break_needed = true; // set variable equal to true 
+						break;
+					}
+				}
+				if (is_break_needed==true){ // if nested if statement returned "break is needed"
+					is_break_needed = false; // reset variable to false 
+					break; // break out of current loop 
+				}
+			}
+			a++;			
+		}
+		double probability= same_birthday/trials;
+	
+		System.out.print(probability);
+	}
+}
