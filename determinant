@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+public class determinant {  
+	public static void main (String[] args) {
+		Scanner keyboard = new Scanner(System.in);
+		int dimensions = keyboard.nextInt(); 
+
+		int [][]array = new int [dimensions][dimensions];
+
+		for (int i = 0; i<dimensions; i++){
+			for (int j =0; j<dimensions; j++){
+				array[i][j] = keyboard.nextInt();
+			}
+			
+		}
+		System.out.println(determinant(array, dimensions));
+		
+		
+	}
+	public static double determinant (int [][] array, int dimensions){
+
+		if (dimensions==1){
+			return (array[0][0]);
+		}
+	
+		else {
+			double sum = 0;
+			for (int i = 0; i < dimensions ; i++){
+				int [][] temp_matrix = new int [dimensions-1][dimensions-1];
+				
+				int x = 0;	
+				for (int j =1; j< dimensions; j++){
+					int y = 0; 
+					for (int k = 0; k <dimensions; k++){
+						if (k==i){
+							continue;
+						}
+						else if (x <dimensions-1 && y < dimensions-1) {
+							temp_matrix[x][y] = array[j][k];
+							y = y+1;
+						}
+					}
+					x = x+1;
+
+				}
+				sum = sum + Math.pow (-1, i)* array[0][i]*determinant(temp_matrix, temp_matrix.length);
+		}
+		return sum;
+	}
+
+		
+}
+}
+
+
+
