@@ -1,0 +1,29 @@
+// Neha Bashyam Period 1
+import java.util.Scanner; 
+
+public class riemann_e_function {
+	public static void main (String [] args) {
+		Scanner keyboard = new Scanner(System.in); 
+		System.out.print("Enter lower bound: "); // lower bound 
+		double a_value = keyboard.nextDouble(); 
+		System.out.print("Enter upper bound:"); // upper bound 
+		double b_value = keyboard.nextDouble(); 
+		System.out.print("Enter n:"); // number of intervals 
+		double n_value = keyboard.nextDouble(); 
+		//System.out.print(actual_function);
+		double constant = ((b_value-a_value)/n_value); 
+		double sum = 0.0; 
+
+		while (a_value < b_value) {
+			double actual_function = 1/ (Math.exp(a_value*a_value));
+			sum = sum + (constant*actual_function) ; 
+			a_value = a_value + constant ;
+
+		}
+		
+		System.out.print("Sum:" + sum);
+		return;	
+		
+	}
+}
+
