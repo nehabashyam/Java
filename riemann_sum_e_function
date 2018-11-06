@@ -1,7 +1,7 @@
 // Neha Bashyam Period 1
 import java.util.Scanner; 
 
-public class riemann_e_function {
+public class riemann_sum_e_function {
 	public static void main (String [] args) {
 		Scanner keyboard = new Scanner(System.in); 
 		System.out.print("Enter lower bound: "); // lower bound 
