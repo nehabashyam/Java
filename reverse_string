@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class reverse_string { 
+	public static void main (String[] args) {
+		Scanner keyboard= new Scanner(System.in);
+		String input = keyboard.next();
+		System.out.println(reverse(input));
+
+	}
+	public static String reverse (String a){
+		if (a.length() ==1 ){
+			return (a);
+		}
+		else 
+			return (a.charAt(a.length()-1) + reverse(a.substring(0,a.length()-1)));
+	}
+}
